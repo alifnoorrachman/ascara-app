@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+.element {
+    will-change: transform, opacity;
+  }  
+
+#services-section {
+    transform-origin: center top;
+    will-change: transform;
+}
+
+/* Hero animation */
+.parallax {
+    will-change: transform, font-size;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Menambahkan transisi untuk transformasi dan ukuran font */
+}
+
+.parallax-text {
+    transition: font-size 0.3s ease-out; /* Menambahkan transisi untuk perubahan ukuran font */
+}
+
+.parallax h1,
+.parallax p {
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Transisi untuk perubahan posisi dan ukuran font */
+}
+
+.parallax-section {
+    will-change: transform, height, font-size;
+    transition: transform 0.3s ease-out, height 0.3s ease-out, font-size 0.3s ease-out;
+}
+
+/* Footer animation */
+.footer-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) !important;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Menyebarkan elemen di navbar */
+    transition: background 0.3s;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.theme-dropdown {
+    position: relative;
+}
+
+/* Tombol untuk Change Theme dengan panah */
+.theme-dropdown button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.theme-dropdown button svg {
+    margin-left: 8px;
+}
+
+/* Dropdown konten untuk Change Theme */
+.theme-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Menampilkan dropdown jika tombol diklik */
+.theme-dropdown.active .dropdown-content {
+    display: block;
+}
+
+.theme-dropdown .dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.theme-dropdown .dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styling untuk elemen yang menampilkan tema aktif */
+#currentTheme {
+    color: black;
+    margin-bottom: 10px;
+}

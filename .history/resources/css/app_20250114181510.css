@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+.element {
+    will-change: transform, opacity;
+  }  
+
+#services-section {
+    transform-origin: center top;
+    will-change: transform;
+}
+
+/* Hero animation */
+.parallax {
+    will-change: transform, font-size;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Menambahkan transisi untuk transformasi dan ukuran font */
+}
+
+.parallax-text {
+    transition: font-size 0.3s ease-out; /* Menambahkan transisi untuk perubahan ukuran font */
+}
+
+.parallax h1,
+.parallax p {
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Transisi untuk perubahan posisi dan ukuran font */
+}
+
+.parallax-section {
+    will-change: transform, height, font-size;
+    transition: transform 0.3s ease-out, height 0.3s ease-out, font-size 0.3s ease-out;
+}
+
+/* Footer animation */
+.footer-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) !important;
+}
+
+
+/* Theme Styles */
+:root {
+    /* Default Theme (ASCARA) */
+    --font-default: 'Inter', sans-serif;
+    --color-primary: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --hover-bg: rgba(0, 0, 0, 0.1);
+    --footer-bg: #ffffff;
+    --footer-text: #000000;
+    --footer-secondary: #666666;
+    --footer-bottom-bg: #000000;
+    --footer-bottom-text: #ffffff;
+    --input-bg: #ffffff;
+    --button-hover: #000000;
+}
+
+/* Le Menegement Theme */
+.theme-menegement {
+    --font-family: 'Playfair Display', serif;
+    --color-primary: #2C3E50;
+    --text-color: #FFFFFF;
+    --border-color: #FFFFFF;
+    --hover-bg: rgba(255, 255, 255, 0.2);
+    --footer-bg: #2C3E50;
+    --footer-text: #FFFFFF;
+    --footer-secondary: #B0B0B0;
+    --footer-bottom-bg: #1a2530;
+    --footer-bottom-text: #FFFFFF;
+    --input-bg: #34495E;
+    --button-hover: #FFFFFF;
+}
+
+/* teMilan Theme */
+.theme-milan {
+    --font-family: 'Montserrat', sans-serif;
+    --color-primary: #8B0000;
+    --text-color: #FFFFFF;
+    --border-color: #FFD700;
+    --hover-bg: rgba(255, 215, 0, 0.2);
+    --footer-bg: #8B0000;
+    --footer-text: #FFFFFF;
+    --footer-secondary: #FFD700;
+    --footer-bottom-bg: #590000;
+    --footer-bottom-text: #FFD700;
+    --input-bg: #A00000;
+    --button-hover: #FFD700;
+}
+
+/* Apply theme variables to navbar */
+#navbar {
+    background-color: var(--color-primary);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+#navbar a {
+    color: var(--text-color);
+}
+
+#navbar .border {
+    border-color: var(--border-color);
+}
+
+#navbar a:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Apply theme variables to footer */
+footer {
+    background-color: var(--footer-bg);
+    font-family: var(--font-family);
+    color: var(--footer-text);
+    transition: all 0.3s ease;
+}
+
+footer h2, 
+footer h3 {
+    color: var(--footer-text);
+}
+
+footer .text-colorTwo {
+    color: var(--footer-secondary);
+}
+
+footer input {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--footer-text);
+}
+
+footer button {
+    border-color: var(--border-color);
+    color: var(--footer-text);
+}
+
+footer button:hover {
+    background-color: var(--button-hover);
+    color: var(--color-primary);
+}
+
+/* Footer bottom section */
+footer .bg-colorNetral {
+    background-color: var(--footer-bottom-bg);
+}
+
+footer .bg-colorNetral,
+footer .bg-colorNetral a {
+    color: var(--footer-bottom-text);
+}
+
+footer .bg-colorNetral a:hover {
+    color: var(--footer-secondary);
+}
+
+/* Theme-specific additional styles */
+.theme-menegement #navbar,
+.theme-menegement footer {
+    letter-spacing: 0.05em;
+}
+
+.theme-menegement footer h2 {
+    font-style: italic;
+}
+
+.theme-milan #navbar,
+.theme-milan footer {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.theme-milan footer h2 {
+    text-transform: uppercase;
+}

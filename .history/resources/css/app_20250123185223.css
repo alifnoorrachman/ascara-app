@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+.element {
+    will-change: transform, opacity;
+  }  
+
+#services-section {
+    transform-origin: center top;
+    will-change: transform;
+}
+
+/* Hero animation */
+.parallax {
+    will-change: transform, font-size;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Menambahkan transisi untuk transformasi dan ukuran font */
+}
+
+.parallax-text {
+    transition: font-size 0.3s ease-out; /* Menambahkan transisi untuk perubahan ukuran font */
+}
+
+.parallax h1,
+.parallax p {
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Transisi untuk perubahan posisi dan ukuran font */
+}
+
+.parallax-section {
+    will-change: transform, height, font-size;
+    transition: transform 0.3s ease-out, height 0.3s ease-out, font-size 0.3s ease-out;
+}
+
+/* Footer animation */
+.footer-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) !important;
+}
+
+
+/* Theme Styles */
+:root {
+    /* Default Theme (ASCARA) */
+    --font-default: 'Inter', sans-serif;
+    --color-primary: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --hover-bg: rgba(0, 0, 0, 0.1);
+    --footer-bg: #ffffff;
+    --footer-text: #000000;
+    --footer-secondary: #666666;
+    --footer-bottom-bg: #000000;
+    --footer-bottom-text: #ffffff;
+    --input-bg: #ffffff;
+    --button-hover: #000000;
+    --accent-color: #000000;
+    --secondary-text: #666666;
+    --card-bg: #f5f5f5;
+    --contact-card-bg: #000000;
+    --contact-text: #ffffff;
+    --link-hover: rgba(0, 0, 0, 0.8);
+    --section-divider: #000000;
+}
+
+/* Le Menegement Theme */
+.theme-menegement {
+    --font-family: 'Playfair Display', serif;
+    --color-primary: #003058; /* Warna utama */
+    --text-color: #f5ebcc; /* Warna teks utama */
+    --border-color: #f0e0af; /* Warna border */
+    --hover-bg: rgba(240, 224, 175, 0.2); /* Warna hover dengan transparansi */
+    --footer-bg:#f5ebcc ; /* Warna latar belakang footer */
+    --footer-text: #f5ebcc; /* Warna teks footer */
+    --footer-secondary: #f0e0af; /* Warna sekunder footer */
+    --footer-bottom-bg: #003058; /* Warna latar bawah footer */
+    --footer-bottom-text: #f0e0af; /* Warna teks bawah footer */
+    --input-bg: #055f5d; /* Warna latar input */
+    --button-hover: #f0e0af; /* Warna tombol saat hover */
+    --accent-color: #ba5332; /* Warna aksen */
+    --secondary-text: #055f5d; /* Warna teks sekunder */
+    --card-bg: #f5ebcc; /* Warna latar belakang card */
+    --contact-card-bg: #055f5d; /* Warna latar belakang contact card */
+    --contact-text: #f0e0af; /* Warna teks pada contact */
+    --link-hover: #f0e0af; /* Warna link saat hover */
+    --section-divider: #f0e0af; /* Warna pembagi section */
+}
+
+/* teMilan Theme */
+.theme-milan {
+    --font-family: 'Montserrat', sans-serif;
+    --color-primary: #fff5eb; /* Menggunakan warna utama yang hangat */
+    --text-color: #763d2a; /* Warna teks utama */
+    --border-color: #eca225; /* Warna border */
+    --hover-bg: rgba(236, 162, 37, 0.2); /* Warna hover dengan transparansi */
+    --footer-bg: #763d2a; /* Warna latar belakang footer */
+    --footer-text: #fff5eb; /* Warna teks footer */
+    --footer-secondary: #eca225; /* Warna sekunder footer */
+    --footer-bottom-bg: #896e7; /* Warna latar bawah footer */
+    --footer-bottom-text: #eca225; /* Warna teks bawah footer */
+    --input-bg: #896e7; /* Warna latar input */
+    --button-hover: #eca225; /* Warna tombol saat hover */
+    --accent-color: #eca225; /* Warna aksen */
+    --secondary-text: #763d2a; /* Warna teks sekunder */
+    --card-bg: #fff5eb; /* Warna latar belakang card */
+    --contact-card-bg: #896e7; /* Warna latar belakang contact card */
+    --contact-text: #eca225; /* Warna teks pada contact */
+    --link-hover: #eca225; /* Warna link saat hover */
+    --section-divider: #eca225; /* Warna pembagi section */
+
+}
+
+/* Apply theme to body */
+body {
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+/* Hero Section */
+section h1 {
+    color: var(--text-color);
+}
+
+section h2 {
+    color: var(--text-color);
+}
+
+.text-colorTwo {
+    color: var(--secondary-text);
+}
+
+.bg-colorNetral {
+    background-color: var(--accent-color);
+}
+
+/* Section dividers and accents */
+.h-px.bg-colorNetral {
+    background-color: var(--section-divider);
+}
+
+.w-4.h-4.bg-colorNetral {
+    background-color: var(--accent-color);
+}
+
+/* Services Section */
+.hover\:bg-colorNetral:hover {
+    background-color: var(--accent-color);
+}
+
+.hover\:text-colorOne:hover {
+    color: var(--color-primary);
+}
+
+/* Works Section */
+.break-inside-avoid {
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.break-inside-avoid:hover {
+    transform: translateY(-4px);
+}
+
+.break-inside-avoid h3 {
+    color: var(--text-color);
+}
+
+/* Articles Section */
+.article-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Contact Card Section */
+section.bg-colorNetral {
+    background-color: var(--contact-card-bg);
+    color: var(--contact-text);
+}
+
+/* Buttons and Links */
+a.hover\:text-colorNetral:hover {
+    color: var(--link-hover);
+}
+
+.border-colorOne {
+    border-color: var(--border-color);
+}
+
+/* Theme-specific styles */
+.theme-menegement {
+    /* Le Menegement specific styles */
+    .italic {
+        color: var(--accent-color);
+    }
+    
+    h1 {
+        letter-spacing: 0.05em;
+    }
+    
+    .article-card {
+        border-bottom: 4px solid var(--accent-color);
+    }
+
+    .footer-bottom {
+        background-color: var(--footer-bg);
+        color: var(--color-primary);
+    }
+
+    .hover-service {
+        background-color: transparent; /* Warna default saat tidak di-hover */
+        transition: background-color 0.3s ease; /* Tambahkan transisi untuk efek halus */
+    }
+    
+    .hover-service:hover {
+        background-color: var(--footer-bg); /* Warna saat di-hover */
+        color: var(--color-primary);
+    }
+    
+    .button:hover {
+        background-color: var(--footer-bg);
+        color: var(--color-primary);
+    }
+}
+
+.theme-milan {
+    /* teMilan specific styles */
+    .italic {
+        color: var(--accent-color);
+        font-weight: 600;
+    }
+    
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+    
+    .article-card {
+        border-bottom: 4px solid var(--accent-color);
+    }
+
+    .footer-bottom {
+        background-color: var(--footer-bg);
+        color: var(--color-primary);
+    }
+
+    .hover-service {
+        background-color: transparent; /* Warna default saat tidak di-hover */
+        transition: background-color 0.3s ease; /* Tambahkan transisi untuk efek halus */
+    }
+    
+    .hover-service:hover {
+        background-color: var(--footer-bg); /* Warna saat di-hover */
+        color: var(--color-primary);
+    }
+    
+    .button:hover {
+        background-color: var(--footer-bg);
+        color: var(--color-primary);
+    }
+}

@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+.element {
+    will-change: transform, opacity;
+  }  
+
+#services-section {
+    transform-origin: center top;
+    will-change: transform;
+}
+
+/* Hero animation */
+.parallax {
+    will-change: transform, font-size;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Menambahkan transisi untuk transformasi dan ukuran font */
+}
+
+.parallax-text {
+    transition: font-size 0.3s ease-out; /* Menambahkan transisi untuk perubahan ukuran font */
+}
+
+.parallax h1,
+.parallax p {
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Transisi untuk perubahan posisi dan ukuran font */
+}
+
+.parallax-section {
+    will-change: transform, height, font-size;
+    transition: transform 0.3s ease-out, height 0.3s ease-out, font-size 0.3s ease-out;
+}
+
+/* Footer animation */
+.footer-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) !important;
+}
+
+
+/* Dropdown yang tersembunyi secara default */
+#themeDropdown {
+    display: none; /* Sembunyikan dropdown secara default */
+    position: absolute; /* Letakkan dropdown di atas konten lainnya */
+    background-color: white;
+    min-width: 160px;
+    z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Menampilkan dropdown saat button diklik */
+#themeDropdown.show {
+    display: block;
+}
+
+/* Tampilan dropdown item */
+#themeDropdown a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#themeDropdown a:hover {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+.element {
+    will-change: transform, opacity;
+  }  
+
+#services-section {
+    transform-origin: center top;
+    will-change: transform;
+}
+
+/* Hero animation */
+.parallax {
+    will-change: transform, font-size;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Menambahkan transisi untuk transformasi dan ukuran font */
+}
+
+.parallax-text {
+    transition: font-size 0.3s ease-out; /* Menambahkan transisi untuk perubahan ukuran font */
+}
+
+.parallax h1,
+.parallax p {
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out; /* Transisi untuk perubahan posisi dan ukuran font */
+}
+
+.parallax-section {
+    will-change: transform, height, font-size;
+    transition: transform 0.3s ease-out, height 0.3s ease-out, font-size 0.3s ease-out;
+}
+
+/* Footer animation */
+.footer-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) !important;
+}
+
+
+/* Theme Styles */
+:root {
+    /* Default Theme (ASCARA) */
+    --font-default: 'Inter', sans-serif;
+    --color-primary: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --hover-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Le Menegement Theme */
+.theme-menegement {
+    --font-family: 'Playfair Display', serif;
+    --color-primary: #2C3E50;
+    --text-color: #000000;
+    --border-color: #FFFFFF;
+    --hover-bg: rgba(255, 255, 255, 0.2);
+}
+
+/* teMilan Theme */
+.theme-milan {
+    --font-family: 'Montserrat', sans-serif;
+    --color-primary: #8B0000;
+    --text-color: #000000;
+    --border-color: #FFD700;
+    --hover-bg: rgba(255, 215, 0, 0.2);
+}
+
+/* Apply theme variables to elements */
+#navbar {
+    background-color: var(--color-primary);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+#navbar a {
+    color: var(--text-color);
+}
+
+#navbar .border {
+    border-color: var(--border-color);
+}
+
+#navbar a:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Theme-specific additional styles */
+.theme-menegement #navbar {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.theme-milan #navbar {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
